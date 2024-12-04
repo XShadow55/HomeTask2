@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/fontawesome/5.15.4/css/all.min.css"
+            crossorigin="anonymous"
+    >
+    <title>Title</title>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="content">
+        <div class="logo">
+            <img src="https://svgshare.com/i/_go.svg" alt="" />
+        </div>
+
+        <div class="image"></div>
+
+        <div class="text">
+            Start for free & get <br />
+            attractive offers today !
+        </div>
+    </div>
+    <form id="form">
+        <div class="title">Get Started</div>
+
+        <div>
+            <label for="username">User Name</label>
+            <i class="fas fa-user"></i>
+
+            <input
+                    type="text"
+                    name="username"
+                    id="username"
+                    placeholder="Joy Shaheb "
+            />
+
+
+
+            <div class="error"></div>
+        </div>
+        <div>
+            <label for="email">Email</label>
+            <i class="far fa-envelope"></i>
+            <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="abc@gmail.com"
+            />
+            <script src="send.js"></script>
+            <button type="button" onclick="sendMail()"> Send </button>
+
+            <div class="error"></div>
+        </div>
+        <div><label for="password">Password</label>
+            <i class="fas fa-lock"></i>
+
+            <input
+                    type="password"
+                    name="password"
+                    id="password"
+                    placeholder="Password here"
+            />
+            <div id="password-requirements">
+                <ul>
+                    <li id="length" class="requirement">Minimum 8 characters </li>
+                    <li id="lowercase" class="requirement">A lowercase letter</li>
+                    <li id="uppercase" class="requirement">A uppercase letter</li>
+                    <li id="number" class="requirement">A one number</li>
+                </ul>
+            </div>
+
+
+            <div class="error"></div></div>
+        <div><label for="password">Confirm Password</label>
+            <i class="fas fa-lock"></i>
+
+            <input
+                    type="password"
+                    name="password"
+                    id="confPassword"
+                    placeholder="Confirm password here"
+            />
+        </div>
+
+            <button id="btn" type="submit">Submit</button>
+
+    </form>
+</div>
+<script src="main.js"></script>
+</body>
+<script>
+    document.getElementById('form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Предотвращаем отправку формы
+
+        // Получаем значения из инпутов
+        const name = document.getElementById('username').value;
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+
+        // Сохраняем данные в localStorage или sessionStorage
+        localStorage.setItem('name', name);
+        localStorage.setItem('email', email);
+        localStorage.setItem('password', password);
+
+        // Переход на новую страницу
+        window.location.href = 'Home.html'; // Замените на имя вашей второй страницы
+    });
+
+</script>
+</html>

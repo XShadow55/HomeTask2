@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Домашняя страница</title>
+</head>
+<body>
+<h1>Ваши данные</h1>
+<p id="output"></p>
+
+<script>
+    // Получаем данные из localStorage или sessionStorage
+    const name = localStorage.getItem('name');
+    const email = localStorage.getItem('email');
+    const password = localStorage.getItem('password');
+
+    // Проверяем, есть ли данные
+    if (name && email) {
+        document.getElementById('output').innerText = `Имя: ${name}, Email: ${email},Password: ${password}`;
+    } else {
+        document.getElementById('output').innerText = "Данные не найдены.";
+    }
+</script>
+</body>
+</html>
